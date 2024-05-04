@@ -1,7 +1,9 @@
 version: '2.3'
 services:
   worker:
-    image: webgrip/github-actions-runner:latest
+    image: webgrip/github-runner:latest
+    container_name: github-actions-runner
+    restart: always
     env_file:
       - .env
     security_opt:
