@@ -15,7 +15,7 @@ WORK_DIR="$RUNNER_WORKDIR"
 
 # 2️⃣ Cleanup job-specific directories
 echo "[INFO] Removing job work directories..."
-rm -rf "$WORK_DIR/*"
+find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d -ctime +1 -exec rm -rf {} \;
 
 # 3️⃣ Clean up Docker (again, just in case)
 #echo "[INFO] Cleaning up Docker..."
@@ -32,7 +32,7 @@ find /var/log -type f -name "*.log" -mtime +7 -exec rm -f {} \;
 journalctl --vacuum-time=7d
 
 # 6️⃣ Restart services if needed
-echo "[INFO] Restarting critical services..."
+#echo "[INFO] Restarting critical services..."
 #systemctl restart docker || true
 #systemctl restart runner.service || true
 
