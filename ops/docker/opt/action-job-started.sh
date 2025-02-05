@@ -4,9 +4,9 @@ set -euo pipefail
 echo "[INFO] GitHub Runner Job Started - Pre-cleanup"
 
 # Variables
-RUNNER_DIR="/home/github/actions-runner"
+RUNNER_DIR="/actions-runner"
 TEMP_DIR="/tmp/runner"
-WORK_DIR="$RUNNER_DIR/work"
+WORK_DIR="$TEMP_DIR/work"
 DOCKER_THRESHOLD=10
 
 # 1️⃣ Stop any lingering processes from previous runs

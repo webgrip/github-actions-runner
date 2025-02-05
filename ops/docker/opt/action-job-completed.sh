@@ -4,9 +4,9 @@ set -euo pipefail
 echo "[INFO] GitHub Runner Job Completed - Post-cleanup"
 
 # Variables
-RUNNER_DIR="/home/github/actions-runner"
+RUNNER_DIR="/actions-runner"
 TEMP_DIR="/tmp/runner"
-WORK_DIR="$RUNNER_DIR/work"
+WORK_DIR="$TEMP_DIR/work"
 
 # 1️⃣ Stop any rogue processes
 #echo "[INFO] Killing orphaned processes..."
