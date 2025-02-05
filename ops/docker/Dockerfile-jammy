@@ -1,4 +1,4 @@
-FROM myoung34/github-runner:2.322.0-ubuntu-noble
+FROM myoung34/github-runner:2.322.0-ubuntu-jammy
 
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
@@ -23,6 +23,7 @@ RUN apt-get update -y \
         git \
         rsync \
         unzip \
+        netcat \
         dnsutils \
     && rm -rf /var/lib/apt/lists/*
 
