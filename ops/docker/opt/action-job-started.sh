@@ -38,10 +38,10 @@ fi
 
 # 6️⃣ Remove temp files
 echo "[INFO] Removing temporary files..."
-rm -rf /tmp/* /var/tmp/* || true
+rm -rf /var/tmp/* || true
 
 # 7️⃣ Verify runner integrity
 echo "[INFO] Checking runner integrity..."
-cd "$RUNNER_DIR" && ./config.sh --check
+#cd "$RUNNER_DIR" && ./config.sh --check
 
 echo "[INFO] Pre-job cleanup completed!"

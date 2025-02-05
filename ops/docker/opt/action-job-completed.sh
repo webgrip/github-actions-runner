@@ -23,8 +23,8 @@ rm -rf "$WORK_DIR/*"
 
 # 4️⃣ Reclaim disk space
 echo "[INFO] Removing temporary files..."
-rm -rf /tmp/* /var/tmp/* || true
-rm -rf "$TEMP_DIR/*"
+rm -rf /var/tmp/* || true
+#rm -rf "$TEMP_DIR/*"
 
 # 5️⃣ Rotate logs
 echo "[INFO] Rotating logs..."
