@@ -1,4 +1,4 @@
-FROM myoung34/github-runner:2.322.0-ubuntu-jammy
+FROM myoung34/github-runner:2.322.0-ubuntu-noble
 
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
