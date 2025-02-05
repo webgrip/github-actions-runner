@@ -6,7 +6,7 @@ echo "[INFO] GitHub Runner Job Started - Pre-cleanup"
 # Variables
 RUNNER_DIR="/actions-runner"
 TEMP_DIR="/tmp/runner"
-WORK_DIR="$TEMP_DIR/work"
+WORK_DIR="$RUNNER_WORKDIR"
 DOCKER_THRESHOLD=10
 
 # 1️⃣ Stop any lingering processes from previous runs
