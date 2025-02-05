@@ -26,4 +26,6 @@ RUN apt-get update -y \
         dnsutils \
     && rm -rf /var/lib/apt/lists/*
 
-
+COPY opt /opt/runner
+RUN chmod +x /opt/runner/action-job-completed.sh
+RUN chmod +x /opt/runner/action-job-started.sh
