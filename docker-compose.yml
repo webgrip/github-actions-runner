@@ -1,10 +1,31 @@
 services:
-  worker:
-    image: webgrip/github-runner:latest
-    container_name: github-actions-runner
-    restart: always
+  runner_1:
+    restart: unless-stopped
+    build:
+        context: ops/docker
+        dockerfile: Dockerfile
     env_file:
       - .env
+    environment:
+      - LABELS=dind
+    security_opt:
+      # needed on SELinux systems to allow docker container to manage other docker containers
+      - label:disable
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner:/tmp/runner'
+      # note: a quirk of docker-in-docker is that this path
+      # needs to be the same path on host and inside the container,
+      # docker mgmt cmds run outside of docker but expect the paths from within
+  runner_2:
+    restart: unless-stopped
+    build:
+      context: ops/docker
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - LABELS=dind
     security_opt:
       # needed on SELinux systems to allow docker container to manage other docker containers
       - label:disable
