@@ -19,16 +19,16 @@ echo "[INFO] Cleaning up old runner directories..."
 find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d -ctime +1 -exec rm -rf {} \;
 
 # 3️⃣ Remove stale Docker containers, images, networks, and volumes
-echo "[INFO] Cleaning up Docker..."
-docker system prune -af --volumes
+#echo "[INFO] Cleaning up Docker..."
+#docker system prune -af --volumes
 
 # 4️⃣ Verify enough disk space
 DISK_USAGE=$(df -h / | awk 'NR==2 {print $4}' | sed 's/G//')
 if [[ "$DISK_USAGE" -lt "$DOCKER_THRESHOLD" ]]; then
   echo "[WARNING] Low disk space! Only ${DISK_USAGE}GB available."
   echo "[INFO] Running additional cleanup..."
-  rm -rf /var/lib/docker/tmp/*
-  docker images prune -a
+#  rm -rf /var/lib/docker/tmp/*
+#  docker images prune -a
 fi
 
 # 5️⃣ Ensure system limits are optimized

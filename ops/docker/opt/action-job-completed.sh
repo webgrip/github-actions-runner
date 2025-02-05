@@ -18,8 +18,8 @@ echo "[INFO] Removing job work directories..."
 rm -rf "$WORK_DIR/*"
 
 # 3️⃣ Clean up Docker (again, just in case)
-echo "[INFO] Cleaning up Docker..."
-docker system prune -af --volumes
+#echo "[INFO] Cleaning up Docker..."
+#docker system prune -af --volumes
 
 # 4️⃣ Reclaim disk space
 echo "[INFO] Removing temporary files..."
