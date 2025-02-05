@@ -7,7 +7,7 @@ services:
     env_file:
       - .env
     environment:
-      - LABELS=dind
+      - LABELS=self-hosted,dind
     security_opt:
       # needed on SELinux systems to allow docker container to manage other docker containers
       - label:disable
