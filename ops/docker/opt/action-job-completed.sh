@@ -14,8 +14,8 @@ WORK_DIR="$RUNNER_WORKDIR"
 #pkill -9 -f "workflow" || true
 
 # 2️⃣ Cleanup job-specific directories
-echo "[INFO] Removing job work directories..."
-find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d -ctime +1 -exec rm -rf {} \;
+echo "[INFO] Removing job work directories in ${WORK_DIR}"
+find "${WORK_DIR}" -mindepth 1 -maxdepth 1 -type d -ctime +1 -exec rm -rf {} \;
 
 # 3️⃣ Clean up Docker (again, just in case)
 #echo "[INFO] Cleaning up Docker..."
