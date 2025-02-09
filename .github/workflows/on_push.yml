@@ -18,7 +18,7 @@ jobs:
     name: "Build and Push Docker Image"
     uses: webgrip/workflows/.github/workflows/docker-build-and-push.yml@main
     with:
-      docker-context: ops/docker/native
+      docker-context: ./ops/docker/native
       docker-file: Dockerfile
       docker-tags: |
         webgrip/github-action-runner:latest
