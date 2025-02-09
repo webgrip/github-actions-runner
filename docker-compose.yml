@@ -2,7 +2,7 @@ services:
   runner_1:
     restart: unless-stopped
     build:
-        context: ops/docker
+        context: ops/docker/myoung
         dockerfile: Dockerfile
     env_file:
       - .env
