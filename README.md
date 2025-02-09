@@ -1,4 +1,4 @@
-
+```
 RUN_AS_ROOT	Boolean to run as root. If true: will run as root. If True and the user is overridden it will error. If any other value it will run as the runner user and allow an optional override. Default is true
 RUNNER_NAME	The name of the runner to use. Supersedes (overrides) RUNNER_NAME_PREFIX
 RUNNER_NAME_PREFIX	A prefix for runner name (See RANDOM_RUNNER_SUFFIX for how the full name is generated). Note: will be overridden by RUNNER_NAME if provided. Defaults to github-runner
@@ -22,3 +22,4 @@ EPHEMERAL	Optional flag to configure runner with --ephemeral option. Ephemeral r
 DISABLE_AUTO_UPDATE	Optional environment variable to disable auto updates. Auto updates are enabled by default to preserve past behavior. Any value is considered truthy and will disable them.
 START_DOCKER_SERVICE	Optional flag which automatically starts the docker service if set to true. Useful when using sysbox. Defaults to false.
 NO_DEFAULT_LABELS	Optional environment variable to disable adding the default self-hosted, platform, and architecture labels to the runner. Any value is considered truthy and will disable them.
+```
