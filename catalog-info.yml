@@ -1,0 +1,28 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: github-actions-runner
+  namespace: webgrip
+  title: Github Actions Runner
+  description: |
+    The docker image for the runner that runs the Github Actions.
+  labels:
+    tier: "2"
+  links:
+    - title: Original Image
+      url: https://github.com/actions/runner
+  tags:
+    - github-actions
+    - runner
+    - docker
+  annotations:
+    backstage.io/adr-location: docs/adr
+    github.com/project-slug: webgrip/backstage-application
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: my-kubernetes-component
+    simpleicons.org/icon-slug: docker
+spec:
+  type: service
+  owner: group:webgrip/backstage
+  lifecycle: experimental
+  system: gha-runner-scale-set

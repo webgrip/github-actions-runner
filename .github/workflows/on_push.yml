@@ -21,8 +21,8 @@ jobs:
       docker-context: './ops/docker/native'
       docker-file: 'Dockerfile'
       docker-tags: |
-        webgrip/github-action-runner:latest
-        webgrip/github-action-runner:${{ github.sha }}
+        webgrip/github-actions-runner:latest
+        webgrip/github-actions-runner:${{ github.sha }}
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
