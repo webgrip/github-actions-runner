@@ -4,14 +4,11 @@ on:
   push:
     branches:
       - 'master'
+      - 'main'
     paths:
       - 'ops/**'
-      - '.github/workflows/**'
+      - '.github/workflows/on_source_change.yml'
   workflow_dispatch:
-
-concurrency:
-  group: push-${{github.repository}}-${{ github.branch }}
-  cancel-in-progress: true
 
 jobs:
   build-docker-image:

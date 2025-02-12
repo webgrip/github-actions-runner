@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - 'master'
+      - 'main'
     paths:
       - 'docs/techdocs/**'
-      - '.github/workflows/update_techdocs.yml'
+      - '.github/workflows/on_docs_change.yml'
   workflow_dispatch:
     inputs:
       source-dir:
