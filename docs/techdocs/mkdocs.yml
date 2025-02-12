@@ -1,0 +1,27 @@
+site_name: 'Github Actions Runner Documentation'
+site_description: 'The docker image for the runner that runs the Github Actions.'
+
+theme:
+  name: 'material'
+
+nav:
+  - Home: index.md
+  - Setup: setup.md
+  - Diagrams (Mermaid, GraphViz): diagrams.md
+
+# https://www.mkdocs.org/user-guide/configuration
+plugins:
+  - techdocs-core:
+      use_material_search: true
+  - search:
+      min-search-length: 2
+      prebuild_index: true
+      indexing: full
+  - mermaid2:
+      arguments:
+        securityLevel: 'loose'
+  - macros
+
+markdown_extensions:
+  - markdown_inline_mermaid
+  - markdown_inline_graphviz

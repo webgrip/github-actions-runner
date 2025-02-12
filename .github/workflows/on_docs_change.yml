@@ -1,0 +1,22 @@
+name: "[Workflow] On Documentation Change"
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'docs/techdocs/**'
+      - '.github/workflows/update_techdocs.yml'
+  workflow_dispatch:
+    inputs:
+      source-dir:
+        type: string
+        description: 'The directory containing the techdocs files'
+        required: false
+        default: 'docs/techdocs'
+
+jobs:
+  update-techdocs:
+    uses: webgrip/workflows/.github/workflows/update_techdocs.yml@main
+    with:
+      source-dir: ${{ github.event.inputs.source-dir || 'docs/techdocs' }}

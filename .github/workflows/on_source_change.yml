@@ -1,4 +1,4 @@
-name: "On Push"
+name: "[Workflow] On Source Change"
 
 on:
   push:

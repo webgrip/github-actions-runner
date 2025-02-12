@@ -18,7 +18,7 @@ metadata:
   annotations:
     backstage.io/adr-location: docs/adr
     github.com/project-slug: webgrip/backstage-application
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:./docs/techdocs
     backstage.io/kubernetes-id: my-kubernetes-component
     simpleicons.org/icon-slug: docker
 spec:
